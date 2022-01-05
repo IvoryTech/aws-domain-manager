@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "baseUrl": ".",
-    "module": "commonjs",
+    "module": "ESNext",
     "target": "es2019",
     "lib": ["esnext"],
     "moduleResolution": "node",
@@ -15,10 +15,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "inlineSources": true,
-    "sourceRoot": "/"
+    "sourceMap": false,
+    "esModuleInterop": true
   },
   "include": ["src/**/*.ts", "./*.ts"],
   "exclude": ["node_modules", "*.js", "*.md"]

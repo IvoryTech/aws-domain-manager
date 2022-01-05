@@ -3,7 +3,7 @@ import {
   ChangeResourceRecordSetsCommand,
   ListHostedZonesCommand
 } from "@aws-sdk/client-route-53";
-import { getAssumeRoleCredentials } from "./helper";
+import { getAssumeRoleCredentials } from "./helper.js";
 
 export const createDomain = async (
   {domainName, dnsName, domainAccountId, roleName}:

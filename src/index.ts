@@ -1,4 +1,4 @@
-import { createDomain } from "src/createDomain";
+import { createDomain } from "./createDomain.js";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
@@ -20,6 +20,4 @@ if (!argv.domainName) {
     throw new Error("Missing domainName");
 }
 
-(async() => {
-   await createDomain(argv);
-})()
+await createDomain(argv);

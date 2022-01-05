@@ -1,5 +1,5 @@
 {
-  "name": "@ivorytech/route53-create-domain",
+  "name": "@ivorytech/route53-change-domain-record",
   "author": "CJ <cj@ivorytech.com.au>",
   "version": "1.1.0",
   "license": "MIT",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IvoryTech/route53-create-domain.git"
+    "url": "https://github.com/IvoryTech/route53-change-domain-record.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

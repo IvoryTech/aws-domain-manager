@@ -1,7 +1,7 @@
 {
   "name": "@ivorytech/route53-create-domain",
   "author": "CJ <cj@ivorytech.com.au>",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "license": "MIT",
   "repository": {
     "type": "git",

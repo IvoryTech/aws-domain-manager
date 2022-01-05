@@ -17,7 +17,7 @@ jobs:
           node-version: "14.x"
           registry-url: "https://npm.pkg.github.com"
           # Defaults to the user or organization that owns the workflow file
-          scope: "@IvoryTech"
+          scope: "@ivorytech"
       - name: Setup Git Configs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

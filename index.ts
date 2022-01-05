@@ -9,7 +9,6 @@ interface IArgs {
     roleName?: string
 }
 
-
 const argv = (yargs(hideBin(process.argv)).argv) as unknown as IArgs
 console.log(argv);
 

@@ -1,9 +1,9 @@
 name: Publish
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +17,7 @@ jobs:
           node-version: "14.x"
           registry-url: "https://npm.pkg.github.com"
           # Defaults to the user or organization that owns the workflow file
-          scope: "@ivorytech"
+          scope: "@IvoryTech"
       - name: Setup Git Configs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

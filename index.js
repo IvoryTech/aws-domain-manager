@@ -1,4 +1,4 @@
-const { createDomain } = require("src/createDomain");
+const { createDomain } = require("./src/createDomain");
 const yargs = require("yargs");
 const { hideBin } = require("yargs/helpers");
 

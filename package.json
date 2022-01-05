@@ -10,7 +10,6 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "type": "module",
   "main": "index.ts",
   "bin": "index.ts",
   "dependencies": {

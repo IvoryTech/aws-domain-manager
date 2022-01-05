@@ -16,6 +16,7 @@
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": false,
+    "skipLibCheck": true,
     "esModuleInterop": true
   },
   "include": ["src/**/*.ts", "./*.ts"],

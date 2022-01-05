@@ -1,13 +1,12 @@
-import {
+const {
   Route53Client,
   ChangeResourceRecordSetsCommand,
   ListHostedZonesCommand
-} from "@aws-sdk/client-route-53";
-import { getAssumeRoleCredentials } from "./helper";
+} = require("@aws-sdk/client-route-53");
+const { getAssumeRoleCredentials } =require("./helper");
 
-export const createDomain = async (
-  {domainName, dnsName, domainAccountId, roleName}:
-  {domainName: string, dnsName: "CloudFront" | string, domainAccountId?: string,roleName?: string }
+ const createDomain = async (
+  {domainName, dnsName, domainAccountId, roleName}
 ) => {
   const route53Client = new Route53Client({
     credentials: domainAccountId && roleName ? await getAssumeRoleCredentials(domainAccountId, roleName) : undefined });
@@ -50,3 +49,5 @@ export const createDomain = async (
     })
   );
 };
+
+module.exports = { createDomain };

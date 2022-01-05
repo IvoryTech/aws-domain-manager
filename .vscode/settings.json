@@ -1,0 +1,20 @@
+{
+  "git.ignoreLimitWarning": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "prettier.trailingComma": "none",
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
+  "prettier.printWidth": 100,
+  "git.autofetch": "all",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "colorize.languages": ["typescript", "javascript", "css"],
+  "cSpell.words": ["ivorytech"]
+}

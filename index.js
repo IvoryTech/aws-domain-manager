@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const { createDomain } = require("./src/createDomain");
 const yargs = require("yargs");
 const { hideBin } = require("yargs/helpers");

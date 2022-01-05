@@ -5,6 +5,10 @@ const {
 } = require("@aws-sdk/client-route-53");
 const { getAssumeRoleCredentials } =require("./helper");
 
+// https://docs.aws.amazon.com/general/latest/gr/elb.html
+const SYDNEY_ALB_HOSTED_ZONE_ID = "Z1GM3OXH4ZPM65";
+const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
+
  const createDomain = async (
   {domainName, dnsName, domainAccountId, roleName}
 ) => {
@@ -27,7 +31,7 @@ const { getAssumeRoleCredentials } =require("./helper");
               Type: "A",
               AliasTarget: {
                 DNSName: dnsName,
-                HostedZoneId: "Z2FDTNDATAQYW2",
+                HostedZoneId: SYDNEY_ALB_HOSTED_ZONE_ID,
                 EvaluateTargetHealth: false
               }
             }
@@ -39,7 +43,7 @@ const { getAssumeRoleCredentials } =require("./helper");
               Type: "AAAA",
               AliasTarget: {
                 DNSName: dnsName,
-                HostedZoneId: "Z2FDTNDATAQYW2",
+                HostedZoneId: SYDNEY_ALB_HOSTED_ZONE_ID,
                 EvaluateTargetHealth: false
               }
             }

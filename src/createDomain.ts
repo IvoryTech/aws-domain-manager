@@ -1,16 +1,13 @@
-const {
+import {
   Route53Client,
   ChangeResourceRecordSetsCommand,
   ListHostedZonesCommand
-} = require("@aws-sdk/client-route-53");
-const { getAssumeRoleCredentials } =require("./helper");
+} from "@aws-sdk/client-route-53";
+import { getAssumeRoleCredentials } from "./helper.js";
 
-// https://docs.aws.amazon.com/general/latest/gr/elb.html
-const SYDNEY_ALB_HOSTED_ZONE_ID = "Z1GM3OXH4ZPM65";
-const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
-
- const createDomain = async (
-  {domainName, dnsName, domainAccountId, roleName}
+export const createDomain = async (
+  {domainName, dnsName, domainAccountId, roleName}:
+  {domainName: string, dnsName: "CloudFront" | string, domainAccountId?: string,roleName?: string }
 ) => {
   const route53Client = new Route53Client({
     credentials: domainAccountId && roleName ? await getAssumeRoleCredentials(domainAccountId, roleName) : undefined });
@@ -31,7 +28,7 @@ const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
               Type: "A",
               AliasTarget: {
                 DNSName: dnsName,
-                HostedZoneId: SYDNEY_ALB_HOSTED_ZONE_ID,
+                HostedZoneId: "Z2FDTNDATAQYW2",
                 EvaluateTargetHealth: false
               }
             }
@@ -43,7 +40,7 @@ const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
               Type: "AAAA",
               AliasTarget: {
                 DNSName: dnsName,
-                HostedZoneId: SYDNEY_ALB_HOSTED_ZONE_ID,
+                HostedZoneId: "Z2FDTNDATAQYW2",
                 EvaluateTargetHealth: false
               }
             }
@@ -53,5 +50,3 @@ const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
     })
   );
 };
-
-module.exports = { createDomain };

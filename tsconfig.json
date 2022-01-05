@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "module": "ESNext",
+    "target": "es2019",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts", "./*.ts"],
+  "exclude": ["node_modules", "*.js", "*.md"]
+}

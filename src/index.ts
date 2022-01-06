@@ -12,7 +12,6 @@ export interface IArgs {
 }
 
 const argv = yargs(hideBin(process.argv)).argv as unknown as IArgs;
-console.log(argv);
 
 if (!argv.domainName) {
   throw new Error("Missing domainName");

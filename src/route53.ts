@@ -8,7 +8,7 @@ import { getAssumeRoleCredentials } from "./assumeRole";
 const SYDNEY_ALB_HOSTED_ZONE_ID = "Z1GM3OXH4ZPM65";
 const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
 
-export const createDomainRecord = async ({
+export const createDnsRecord = async ({
   domainName,
   dnsName,
   domainAccountId,
@@ -19,6 +19,7 @@ export const createDomainRecord = async ({
   domainAccountId?: string;
   roleName?: string;
 }) => {
+  console.info("Create DNS record start.");
   let aliasHostZoneId = "";
   if (dnsName?.includes("cloudfront.net")) {
     aliasHostZoneId = CLOUDFRONT_HOSTED_ZONE_ID;
@@ -71,4 +72,5 @@ export const createDomainRecord = async ({
       }
     })
   );
+  console.info("Create DNS record completed.");
 };

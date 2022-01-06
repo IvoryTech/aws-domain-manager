@@ -1,6 +1,6 @@
 import { IArgs } from "src";
 import { getDistributionsByDomain, invalidateCache } from "./cloudFront";
-import { createDomainRecord } from "./route53";
+import { createDnsRecord } from "./route53";
 
 export const handleProcess = async (args: IArgs) => {
   const { dnsName, domainName } = args;
@@ -15,7 +15,7 @@ export const handleProcess = async (args: IArgs) => {
     if (!route53DnsName) {
       throw new Error(`No CloudFront distribution found for domain ${domainName}`);
     }
-    await createDomainRecord({
+    await createDnsRecord({
       ...args,
       dnsName: route53DnsName
     });

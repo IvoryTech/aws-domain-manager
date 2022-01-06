@@ -67,5 +67,3 @@ const verifyInvalidation = async (distributionId: string, invalidationId: string
   await sleep(1000);
   await verifyInvalidation(distributionId, invalidationId);
 };
-
-getDistributionsByDomain("dev.ivorytech.com.au");

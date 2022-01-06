@@ -4,9 +4,14 @@
   "version": "1.2.4",
   "license": "MIT",
   "type": "module",
+  "bin": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",

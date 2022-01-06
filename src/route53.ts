@@ -8,17 +8,25 @@ import { getAssumeRoleCredentials } from "./assumeRole";
 const SYDNEY_ALB_HOSTED_ZONE_ID = "Z1GM3OXH4ZPM65";
 const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
 
-export const createDomain = async ({
+export const createDomainRecord = async ({
   domainName,
   dnsName,
   domainAccountId,
   roleName
 }: {
   domainName: string;
-  dnsName: "CloudFront" | string;
+  dnsName: string;
   domainAccountId?: string;
   roleName?: string;
 }) => {
+  let aliasHostZoneId = "";
+  if (dnsName?.includes("cloudfront.net")) {
+    aliasHostZoneId = CLOUDFRONT_HOSTED_ZONE_ID;
+  }
+  if (dnsName?.includes("elb.amazonaws.com")) {
+    aliasHostZoneId = SYDNEY_ALB_HOSTED_ZONE_ID;
+  }
+
   const route53Client = new Route53Client({
     credentials:
       domainAccountId && roleName
@@ -42,7 +50,7 @@ export const createDomain = async ({
               Type: "A",
               AliasTarget: {
                 DNSName: dnsName,
-                HostedZoneId: SYDNEY_ALB_HOSTED_ZONE_ID,
+                HostedZoneId: aliasHostZoneId,
                 EvaluateTargetHealth: false
               }
             }
@@ -54,7 +62,7 @@ export const createDomain = async ({
               Type: "AAAA",
               AliasTarget: {
                 DNSName: dnsName,
-                HostedZoneId: SYDNEY_ALB_HOSTED_ZONE_ID,
+                HostedZoneId: aliasHostZoneId,
                 EvaluateTargetHealth: false
               }
             }

@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IvoryTech/route53-create-domain-record.git"
+    "url": "https://github.com/IvoryTech/aws-domain-manager.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

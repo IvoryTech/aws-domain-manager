@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import { createDomain } from "./createDomain";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
@@ -23,5 +22,10 @@ if (!argv.domainName) {
 }
 
 (async () => {
-  await createDomain(argv);
+  try {
+    await createDomain(argv);
+  } catch (err) {
+    console.error(err);
+    process.exitCode = 1;
+  }
 })();

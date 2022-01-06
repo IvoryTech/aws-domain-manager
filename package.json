@@ -1,7 +1,7 @@
 {
   "name": "@ivorytech/route53-create-domain-record",
   "author": "CJ <cj@ivorytech.com.au>",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "license": "MIT",
   "bin": "dist/index.js",
   "files": [

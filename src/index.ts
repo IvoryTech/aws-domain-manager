@@ -20,4 +20,6 @@ if (!argv.domainName) {
   throw new Error("Missing domainName");
 }
 
-await createDomain(argv);
+(async () => {
+  await createDomain(argv);
+})();

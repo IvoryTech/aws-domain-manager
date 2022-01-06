@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { createDomain } from "./createDomain";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";

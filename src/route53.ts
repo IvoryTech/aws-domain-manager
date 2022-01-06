@@ -19,7 +19,7 @@ export const createDnsRecord = async ({
   domainAccountId?: string;
   roleName?: string;
 }) => {
-  console.info("Create DNS record start.");
+  console.info("Creating DNS record...");
   let aliasHostZoneId = "";
   if (dnsName?.includes("cloudfront.net")) {
     aliasHostZoneId = CLOUDFRONT_HOSTED_ZONE_ID;

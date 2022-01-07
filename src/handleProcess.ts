@@ -1,6 +1,6 @@
-import { IArgs } from "src";
-import { getDistributionsByDomain, invalidateCache } from "./cloudFront";
-import { createDnsRecord } from "./route53";
+import { IArgs } from "src/index.js";
+import { getDistributionsByDomain, invalidateCache } from "./cloudFront.js";
+import { createDnsRecord } from "./route53.js";
 
 export const handleProcess = async (args: IArgs) => {
   const { dnsName, domainName } = args;

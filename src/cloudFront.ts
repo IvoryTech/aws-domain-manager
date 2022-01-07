@@ -6,7 +6,7 @@ import {
   ListDistributionsCommand,
   ListDistributionsCommandOutput
 } from "@aws-sdk/client-cloudfront";
-import { sleep } from "./helper";
+import { sleep } from "./helper.js";
 
 const client = new CloudFrontClient({});
 

@@ -3,7 +3,7 @@ import {
   ChangeResourceRecordSetsCommand,
   ListHostedZonesCommand
 } from "@aws-sdk/client-route-53";
-import { getAssumeRoleCredentials } from "./assumeRole";
+import { getAssumeRoleCredentials } from "./assumeRole.js";
 
 const SYDNEY_ALB_HOSTED_ZONE_ID = "Z1GM3OXH4ZPM65";
 const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";

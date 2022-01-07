@@ -3,9 +3,9 @@ import { getDistributionsByDomain, invalidateCache } from "./cloudFront.js";
 import { createDnsRecord } from "./route53.js";
 
 export const handleProcess = async (args: IArgs) => {
-  const { dnsName, domainName } = args;
+  const { dnsName, domainName, clearCache } = args;
   const distributions =
-    dnsName === "CloudFront" ? await getDistributionsByDomain(domainName) : undefined;
+    clearCache || dnsName === "CloudFront" ? await getDistributionsByDomain(domainName) : undefined;
 
   if (dnsName) {
     const route53DnsName =

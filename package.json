@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "start": "node --loader ts-node/esm src/index.ts",
     "build": "rimraf dist && tsc",
     "prepublishOnly": "npm run build"
   },

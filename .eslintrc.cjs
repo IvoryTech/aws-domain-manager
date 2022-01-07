@@ -26,7 +26,11 @@ module.exports = {
   },
   parser: "@typescript-eslint/parser",
   plugins: ["import", "@typescript-eslint", "unused-imports"],
-  extends: ["plugin:@typescript-eslint/recommended", "plugin:node/recommended", "prettier"],
+  extends: [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@ivorytech/node/recommended",
+    "prettier"
+  ],
   globals: {
     jest: true
   },
@@ -117,6 +121,7 @@ module.exports = {
     ],
     "node/shebang": 0,
     "node/no-missing-import": 0,
-    "node/no-extraneous-import": 0
+    "node/no-extraneous-import": 0,
+    "node/file-extension-in-import": ["error", "always"]
   }
 };

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import yargs from "yargs";
-import { hideBin } from "yargs/helpers";
+import { hideBin } from "yargs/helpers.js";
 import { handleProcess } from "./handleProcess.js";
 
 export interface IArgs {

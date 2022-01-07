@@ -26,7 +26,7 @@ module.exports = {
   },
   parser: "@typescript-eslint/parser",
   plugins: ["import", "@typescript-eslint", "unused-imports"],
-  extends: ["plugin:@typescript-eslint/recommended", "prettier"],
+  extends: ["plugin:@typescript-eslint/recommended", "plugin:node/recommended", "prettier"],
   globals: {
     jest: true
   },
@@ -106,6 +106,17 @@ module.exports = {
     "unused-imports/no-unused-vars": [
       "off",
       { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
-    ]
+    ],
+    "node/file-extension-in-import": [
+      "error",
+      "always",
+      {
+        tryExtensions: [".js", ".json", ".node"],
+        ".js": "always"
+      }
+    ],
+    "node/shebang": 0,
+    "node/no-missing-import": 0,
+    "node/no-extraneous-import": 0
   }
 };

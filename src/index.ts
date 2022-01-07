@@ -29,11 +29,9 @@ if ((argv.roleName && !argv.domainAccountId) || (!argv.roleName && argv.domainAc
   throw new Error("Args roleName needs to be used together with domainAccountId.");
 }
 
-(async () => {
-  try {
-    await handleProcess(argv);
-  } catch (err) {
-    console.error(err);
-    process.exitCode = 1;
-  }
-})();
+try {
+  await handleProcess(argv);
+} catch (err) {
+  console.error(err);
+  process.exitCode = 1;
+}

@@ -3,6 +3,7 @@
   "author": "CJ <cj@ivorytech.com.au>",
   "version": "1.2.13",
   "license": "MIT",
+  "type": "module",
   "bin": "dist/index.js",
   "files": [
     "dist"

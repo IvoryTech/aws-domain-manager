@@ -1,4 +1,4 @@
-import { IArgs } from "src";
+import type { IArgs } from "src";
 import { getDistributionsByDomain, invalidateCache } from "./cloudFront.js";
 import { createDnsRecord } from "./route53.js";
 

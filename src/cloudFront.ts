@@ -1,10 +1,12 @@
+import type {
+  DistributionSummary,
+  ListDistributionsCommandOutput
+} from "@aws-sdk/client-cloudfront";
 import {
   CloudFrontClient,
   CreateInvalidationCommand,
-  DistributionSummary,
   GetInvalidationCommand,
-  ListDistributionsCommand,
-  ListDistributionsCommandOutput
+  ListDistributionsCommand
 } from "@aws-sdk/client-cloudfront";
 import { sleep } from "./helper.js";
 

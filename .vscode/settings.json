@@ -4,6 +4,7 @@
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
+  "typescript.preferences.importModuleSpecifierEnding": "js",
   "prettier.trailingComma": "none",
   "prettier.tabWidth": 2,
   "prettier.semi": true,

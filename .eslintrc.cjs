@@ -110,18 +110,6 @@ module.exports = {
     "unused-imports/no-unused-vars": [
       "off",
       { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
-    ],
-    "node/file-extension-in-import": [
-      "error",
-      "always",
-      {
-        tryExtensions: [".js", ".json", ".node"],
-        ".js": "always"
-      }
-    ],
-    "node/shebang": 0,
-    "node/no-missing-import": 0,
-    "node/no-extraneous-import": 0,
-    "node/file-extension-in-import": ["error", "always"]
+    ]
   }
 };

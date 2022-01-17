@@ -3,7 +3,7 @@ import {
   ChangeResourceRecordSetsCommand,
   ListHostedZonesCommand
 } from "@aws-sdk/client-route-53";
-import { getAssumeRoleCredentials } from "./assumeRole.js";
+import { fromIni } from "@aws-sdk/credential-providers";
 
 const SYDNEY_ALB_HOSTED_ZONE_ID = "Z1GM3OXH4ZPM65";
 const CLOUDFRONT_HOSTED_ZONE_ID = "Z2FDTNDATAQYW2";
@@ -29,10 +29,10 @@ export const createDnsRecord = async ({
   }
 
   const route53Client = new Route53Client({
-    credentials:
-      domainAccountId && roleName
-        ? await getAssumeRoleCredentials(domainAccountId, roleName)
-        : undefined
+    credentials: fromIni({ profile: "default" })
+    // domainAccountId && roleName
+    //   ? await getAssumeRoleCredentials(domainAccountId, roleName)
+    // : undefined
   });
 
   const hostedZoneId = (await route53Client.send(new ListHostedZonesCommand({}))).HostedZones?.find(

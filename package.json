@@ -1,7 +1,7 @@
 {
   "name": "@ivorytech/aws-domain-manager",
   "author": "CJ <cj@ivorytech.com.au>",
-  "version": "1.2.27",
+  "version": "1.2.28",
   "license": "MIT",
   "type": "module",
   "bin": "dist/index.js",

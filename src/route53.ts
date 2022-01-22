@@ -41,9 +41,7 @@ export const createDnsRecord = async ({
         }
       }
     }
-  );
-
-  console.log(hostedZoneIds);
+  ).filter(Boolean);
 
   if (!hostedZoneIds) {
     throw new Error("No DNS found");

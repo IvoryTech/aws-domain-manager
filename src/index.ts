@@ -9,6 +9,8 @@ export interface IArgs {
   domainAccountId?: string;
   roleName?: string;
   clearCache?: "true";
+  isPublic?: "true";
+  isPrivate?: "true";
 }
 
 const argv = yargs(hideBin(process.argv)).argv as unknown as IArgs;

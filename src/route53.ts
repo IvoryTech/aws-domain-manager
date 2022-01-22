@@ -39,7 +39,8 @@ export const createDnsRecord = async ({
       if (x.Name?.includes(domainName.split(".").slice(1).join("."))) {
         if (
           (x.Config?.PrivateZone === true && isPrivate === "true") ||
-          (x.Config?.PrivateZone === false && isPublic === "true")
+          (x.Config?.PrivateZone === false && isPublic === "true") ||
+          (!isPublic && !isPrivate)
         ) {
           return x.Id;
         }

@@ -14,8 +14,7 @@ export const createDnsRecord = async ({
   dnsName,
   domainAccountId,
   roleName,
-  isPrivate,
-  isPublic
+  isPrivate
 }: IArgs) => {
   console.info("Creating DNS record...");
   let aliasHostZoneId = "";
@@ -37,11 +36,7 @@ export const createDnsRecord = async ({
   const hostedZoneIds = (await route53Client.send(new ListHostedZonesCommand({}))).HostedZones?.map(
     (x) => {
       if (x.Name?.includes(domainName.split(".").slice(1).join("."))) {
-        if (
-          (x.Config?.PrivateZone === true && isPrivate === "true") ||
-          (x.Config?.PrivateZone === false && isPublic === "true") ||
-          (!isPublic && !isPrivate)
-        ) {
+        if (!isPrivate || (x.Config?.PrivateZone === true && isPrivate === "true")) {
           return x.Id;
         }
       }

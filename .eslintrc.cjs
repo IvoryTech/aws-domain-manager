@@ -28,7 +28,7 @@ module.exports = {
   plugins: ["import", "@typescript-eslint", "unused-imports"],
   extends: [
     "plugin:@typescript-eslint/recommended",
-    "plugin:@ivorytech/node/recommended",
+    "plugin:@unientropy/node/recommended",
     "prettier"
   ],
   globals: {

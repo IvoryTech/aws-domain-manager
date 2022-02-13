@@ -17,5 +17,5 @@
     "source.fixAll.eslint": true
   },
   "colorize.languages": ["typescript", "javascript", "css"],
-  "cSpell.words": ["ivorytech"]
+  "cSpell.words": ["unientropy"]
 }
